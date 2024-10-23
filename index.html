@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sonoma 14.6.1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Header with Menu Bar -->
+    <header class="header">
+      <!-- Menu Bar -->
+      <div class="menu-bar">
+        <div class="menu-bar__container">
+          <!-- Left Menu -->
+          <div class="menu-bar__left">
+            <div class="menu-bar__item menu-item">
+              Finder
+              <div class="menu-item__dropdown">
+                <a href="#">À propos du Finder</a>
+                <a href="#">Réglages...</a>
+                <a href="#">Vider la corbeille</a>
+              </div>
+            </div>
+
+            <div class="menu-bar__item menu-item">
+              Fichier
+              <div class="menu-item__dropdown">
+                <a href="#">Nouveau</a>
+                <a href="#">Ouvrir</a>
+                <a href="#">Enregistrer</a>
+              </div>
+            </div>
+
+            <div class="menu-bar__item menu-item">
+              Édition
+              <div class="menu-item__dropdown">
+                <a href="#">Annuler</a>
+                <a href="#">Copier</a>
+                <a href="#">Coller</a>
+              </div>
+            </div>
+
+            <div class="menu-bar__item menu-item">
+              Présentation
+              <div class="menu-item__dropdown">
+                <a href="#">Diaporama</a>
+                <a href="#">Mise en page</a>
+              </div>
+            </div>
+
+            <div class="menu-bar__item menu-item">
+              Aller
+              <div class="menu-item__dropdown">
+                <a href="#">Vers le haut</a>
+                <a href="#">Vers le bas</a>
+              </div>
+            </div>
+
+            <div class="menu-bar__item menu-item">
+              Fenêtre
+              <div class="menu-item__dropdown">
+                <a href="#">Réorganiser</a>
+                <a href="#">Minimiser</a>
+              </div>
+            </div>
+
+            <div class="menu-bar__item menu-item">
+              Aide
+              <div class="menu-item__dropdown">
+                <a href="#">Documentation</a>
+                <a href="#">Support</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Menu Icons (WiFi, Battery, Time) -->
+          <div class="menu-bar__right">
+            <div class="menu-bar__icon menu-bar__icon--wifi"></div>
+            <div class="menu-bar__icon menu-bar__icon--battery"></div>
+            <div class="menu-bar__time">08:50</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Section -->
+    <main class="main-content">
+      <div class="folders-sidebar">
+        <a href="#" class="folder" ondblclick="openFolder('Me')">
+          <img src="assets/folder.png" alt="Gad Ntenta" class="folder__icon" />
+          <div class="folder__name">Gad Ntenta</div>
+        </a>
+        <a href="#" class="folder" ondblclick="openFolder('Kadea')">
+          <img src="assets/kadea.png" alt="Kadea" class="folder__icon" />
+          <div class="folder__name">Kadea</div>
+        </a>
+      </div>
+
+      <div class="trash-bin">
+        <a href="#" class="folder">
+          <img src="assets/trash.png" alt="Trash" class="folder__icon" />
+          <div class="folder__name">corbeille</div>
+        </a>
+      </div>
+    </main>
+
+    <div id="folderWindow" class="gestionnaire-fichiers">
+      <div class="gestionnaire-fichiers__barre-laterale">
+        <div class="gestionnaire-fichiers__entete">
+          <div
+            id="button-fermer"
+            class="red gestionnaire-fichiers__bouton gestionnaire-fichiers__bouton--fermer"
+          >
+            <p class="gestionnaire-fichiers__icon">x</p>
+          </div>
+          <div
+            id="button-minimiser"
+            class="yellow gestionnaire-fichiers__bouton gestionnaire-fichiers__bouton--minimiser"
+          >
+            <p class="gestionnaire-fichiers__icon">-</p>
+          </div>
+          <div
+            id="button-maximiser"
+            class="green gestionnaire-fichiers__bouton gestionnaire-fichiers__bouton--maximiser"
+          >
+            <p class="gestionnaire-fichiers__icon">[]</p>
+          </div>
+        </div>
+
+        <div class="gestionnaire-fichiers__favoris">
+          <p class="gestionnaire-fichiers__titre">Favoris</p>
+          <div class="gestionnaire-fichiers__liste-favoris">
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/schedule.svg"
+                alt="Récent"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Récent</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/download.svg"
+                alt="Applications"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Applications</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/document.svg"
+                alt="Documents"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Documents</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/download.svg"
+                alt="Airdrop"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Airdrop</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/download.svg"
+                alt="Téléchargements"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Téléchargements</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/image_24dp_5985E1_FILL0_wght400_GRAD0_opsz24.svg"
+                alt="Images"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Images</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/movie.svg"
+                alt="Vidéos"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Vidéos</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-favori">
+              <img
+                src="assets/music.svg"
+                alt="Musique"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Musique</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="gestionnaire-fichiers__icloud">
+          <p class="gestionnaire-fichiers__titre">iCloud</p>
+          <div class="gestionnaire-fichiers__liste-icloud">
+            <div class="gestionnaire-fichiers__item-icloud">
+              <img
+                src="assets/cloud.svg"
+                alt="iCloud Drive"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">iCloud Drive</p>
+            </div>
+            <div class="gestionnaire-fichiers__item-icloud">
+              <img
+                src="assets/folder_sharde.svg"
+                alt="Partager"
+                class="gestionnaire-fichiers__icone"
+              />
+              <p class="gestionnaire-fichiers__libelle">Partager</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="gestionnaire-fichiers__contenu">
+        <div class="gestionnaire-fichiers__entete-contenu">
+          <div class="gestionnaire-fichiers__navigation">
+            <p class="gestionnaire-fichiers__nav-retour">‹</p>
+            <p class="gestionnaire-fichiers__nav-avancer">›</p>
+            <p class="gestionnaire-fichiers__dossier-actuel">Récent</p>
+          </div>
+          <div class="gestionnaire-fichiers__actions">
+            <img
+              src="assets/iconoption.png"
+              alt="Options"
+              class="gestionnaire-fichiers__icone-action"
+            />
+            <img
+              src="assets/searchicon.png"
+              alt="Rechercher"
+              class="gestionnaire-fichiers__icone-action"
+            />
+          </div>
+        </div>
+
+        <div class="gestionnaire-fichiers__grille">
+          <div
+            class="gestionnaire-fichiers__dossier-item"
+            ondblclick="ouvrirDossier('IMMO KONGO')"
+          >
+            <img
+              src="assets/folder.png"
+              alt="IMMO KONGO"
+              class="gestionnaire-fichiers__icone-dossier"
+            />
+            <p class="gestionnaire-fichiers__nom-dossier">IMMO KONGO</p>
+          </div>
+          <div
+            class="gestionnaire-fichiers__dossier-item"
+            ondblclick="ouvrirDossier('Skills')"
+          >
+            <img
+              src="assets/folder.png"
+              alt="Skills"
+              class="gestionnaire-fichiers__icone-dossier"
+            />
+            <p class="gestionnaire-fichiers__nom-dossier">Skills</p>
+          </div>
+          <div
+            class="gestionnaire-fichiers__dossier-item"
+            ondblclick="ouvrirDossier('Kadea')"
+          >
+            <img
+              src="assets/folder.png"
+              alt="Kadea"
+              class="gestionnaire-fichiers__icone-dossier"
+            />
+            <p class="gestionnaire-fichiers__nom-dossier">Kadea</p>
+          </div>
+          <div
+            class="gestionnaire-fichiers__dossier-item"
+            ondblclick="ouvrirDossier('Me')"
+          >
+            <img
+              src="assets/folder.png"
+              alt="Me"
+              class="gestionnaire-fichiers__icone-dossier"
+            />
+            <p class="gestionnaire-fichiers__nom-dossier">Me</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <div>
+        <img
+          src="assets/menu.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/safari.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/finder.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/ps2.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/psp.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/vscode.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/kadea.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/folder.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/folder.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/folder.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+        <img
+          src="assets/folder.png"
+          alt="Dossier"
+          class="gestionnaire-fichiers__icone-dossier"
+        />
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
